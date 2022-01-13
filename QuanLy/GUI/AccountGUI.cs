@@ -37,5 +37,45 @@ namespace QuanLy.GUI
                 dtgv_Account.Rows.Add(ac.username, ac.displayname, ac.password, ac.type);
             }
         }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            AccountDTO ac = new AccountDTO();
+            ac.username = txt_UserName.Text;
+            ac.displayname = txt_DisplayName.Text;
+            ac.password = txt_PassWord.Text;
+            ac.type = cb_Type.Text;
+            acBLL.Add_Account(ac);
+            dtgv_Account.Rows.Add(ac.username, ac.displayname, ac.password, ac.type);
+            
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            AccountDTO ac = new AccountDTO();
+            ac.username = txt_UserName.Text;
+            ac.displayname = txt_DisplayName.Text;
+            ac.password = txt_PassWord.Text;
+            ac.type = cb_Type.Text;
+            acBLL.Delete_Account(ac);
+            dtgv_Account.Rows.RemoveAt(index);
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            if (index>0)
+            {
+                AccountDTO ac = new AccountDTO();
+                ac.username = txt_UserName.Text;
+                ac.displayname = txt_DisplayName.Text;
+                ac.password = txt_PassWord.Text;
+                ac.type = cb_Type.Text;
+                acBLL.Edit_Account(ac);
+                dtgv_Account.Rows[index].Cells[0].Value = ac.username;
+                dtgv_Account.Rows[index].Cells[1].Value = ac.displayname;
+                dtgv_Account.Rows[index].Cells[2].Value = ac.password;
+                dtgv_Account.Rows[index].Cells[3].Value = ac.type;
+            }
+        }
     }
 }

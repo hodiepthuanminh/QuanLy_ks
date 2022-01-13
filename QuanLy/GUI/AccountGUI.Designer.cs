@@ -42,7 +42,6 @@ namespace QuanLy.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.cb_Type = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
@@ -97,6 +96,7 @@ namespace QuanLy.GUI
             this.Column4.HeaderText = "Chức vụ";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
             // label1
             // 
@@ -166,15 +166,6 @@ namespace QuanLy.GUI
             this.label4.TabIndex = 1;
             this.label4.Text = "Chức vụ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(20, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btn_Exit
             // 
             this.btn_Exit.Location = new System.Drawing.Point(733, 411);
@@ -192,6 +183,7 @@ namespace QuanLy.GUI
             this.btn_Delete.TabIndex = 5;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -201,6 +193,7 @@ namespace QuanLy.GUI
             this.btn_Edit.TabIndex = 5;
             this.btn_Edit.Text = "Sửa ";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
@@ -210,6 +203,7 @@ namespace QuanLy.GUI
             this.btn_Add.TabIndex = 5;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // AccountGUI
             // 
@@ -220,7 +214,6 @@ namespace QuanLy.GUI
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cb_Type);
             this.Controls.Add(this.txt_PassWord);
             this.Controls.Add(this.txt_DisplayName);
@@ -254,7 +247,6 @@ namespace QuanLy.GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_Type;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;

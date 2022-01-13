@@ -34,8 +34,36 @@ namespace QuanLy.DAO
             SqlConnection conn = CreateConnection();
             conn.Open();
             SqlCommand cmd = new SqlCommand("Add_Account",conn);
-            
-
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter(" @username", ac.username));
+            cmd.Parameters.Add(new SqlParameter(" @displayname", ac.displayname));
+            cmd.Parameters.Add(new SqlParameter(" @password", ac.password));
+            cmd.Parameters.Add(new SqlParameter(" @type", ac.type));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void Delete_Account(AccountDTO ac)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Delete_Account", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("@username", System.Data.SqlDbType.Char).Value = ac.username;           
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void Edit_Account(AccountDTO ac)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Edit_Account", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("@username", System.Data.SqlDbType.Char).Value = ac.username;
+            cmd.Parameters.Add("@displayname", System.Data.SqlDbType.NVarChar).Value = ac.displayname;
+            cmd.Parameters.Add("@password", System.Data.SqlDbType.Char).Value = ac.password;
+            cmd.Parameters.Add("@type", System.Data.SqlDbType.VarChar).Value = ac.type;
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

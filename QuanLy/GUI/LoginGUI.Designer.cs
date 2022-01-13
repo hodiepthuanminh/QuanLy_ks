@@ -34,6 +34,7 @@ namespace QuanLy
             this.txt_UserName = new System.Windows.Forms.TextBox();
             this.txt_PassWord = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
+            this.btn_Registration = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,11 +79,22 @@ namespace QuanLy
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
+            // btn_Registration
+            // 
+            this.btn_Registration.Location = new System.Drawing.Point(251, 143);
+            this.btn_Registration.Name = "btn_Registration";
+            this.btn_Registration.Size = new System.Drawing.Size(118, 34);
+            this.btn_Registration.TabIndex = 2;
+            this.btn_Registration.Text = "Đăng ký";
+            this.btn_Registration.UseVisualStyleBackColor = true;
+            this.btn_Registration.Click += new System.EventHandler(this.btn_Login_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 236);
+            this.Controls.Add(this.btn_Registration);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.txt_PassWord);
             this.Controls.Add(this.txt_UserName);
@@ -102,5 +114,6 @@ namespace QuanLy
         private System.Windows.Forms.TextBox txt_UserName;
         private System.Windows.Forms.TextBox txt_PassWord;
         private System.Windows.Forms.Button btn_Login;
+        private System.Windows.Forms.Button btn_Registration;
     }
 }
